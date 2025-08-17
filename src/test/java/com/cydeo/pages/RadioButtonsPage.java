@@ -8,12 +8,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 
-public class RadioButtonsPage {
+public class RadioButtonsPage extends Page {
 
-    public RadioButtonsPage() {
-
-        PageFactory.initElements(Driver.getDriver(),this);
-    }
 
     public WebElement selectOption(String id) {
         WebElement element = Driver.getDriver().findElement(By.id(id.toLowerCase()));
@@ -22,6 +18,7 @@ public class RadioButtonsPage {
 
     }
 
+    @Override
     public void loadPage(){
         Driver.getDriver().get(CommonConfig.PAGE_URL + PageEndpoints.RADI_BUTTONS_PAGE);
     }
